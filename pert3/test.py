@@ -1,5 +1,5 @@
 value = input("enter value")
-if value >= 90:
+if value >= 95:
     grad = "A"
 elif value >= 80:
     grade = "B"
