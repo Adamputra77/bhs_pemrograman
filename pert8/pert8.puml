@@ -3,20 +3,20 @@ autonumber "<b> ."
 actor user
 participant "Menu" as M
 participant "Pilih Menu" as pil
-participant "Aku" as A
-participant "Dia" as D
-participant "Quantity" as qty
+participant "Ferari" as Ferari
+participant "Lambo" as Lambo
+participant "Jumlah" as jmlh
 participant "Total" as tot
 participant "Exit" as X
 
 user --> M: Tampilkan Menu Utama
-M --> pil: Pilihan Menu 1 Atau 2, Pilih Aku Atau Dia
-pil --> A: Menampilkan Profile Aku
-A --> qty: Masukkan Jumlah Quantity
-qty --> tot: Print
+M --> pil: Pilihan Menu 1 Atau 2, Pilih Ferari Atau Lambo
+pil --> Ferari: Menampilkan Profile Ferari
+Ferari --> jmlh: Masukkan Jumlah Profil Ferari
+jmlh --> tot: Print
 M --> tot: Kembali Ke Menu
-pil --> D: Menampilkan Jumlah Quantity
-qty --> tot: print
+pil --> Lambo: Menampilkan Jumlah Profil Lambo
+jmlh --> tot: print
 tot --> X: Jika Pilihan Exit
 M <-- tot: Kembali Ke Menu
 @enduml
