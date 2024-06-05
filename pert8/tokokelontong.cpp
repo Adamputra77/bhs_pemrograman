@@ -60,7 +60,7 @@ void processPurchase(struct Store* store, const char* productName, int quantity)
         if (strcmp(temp->product.name, productName) == 0) {
             if (temp->product.quantity >= quantity) {
                 temp->product.quantity -= quantity;
-                printf("Pembelian berhasil.\n");
+                printf("Pembelian %s sebanyak %d berhasil.\n", productName, quantity);
                 return;
             } else {
                 printf("Stok %s tidak mencukupi.\n", productName);
@@ -70,6 +70,19 @@ void processPurchase(struct Store* store, const char* productName, int quantity)
         temp = temp->next;
     }
     printf("Produk %s tidak ditemukan.\n", productName);
+}
+
+// Fungsi untuk memesan produk sesuai dengan input pengguna
+void placeOrder(struct Store* store) {
+    char productName[50];
+    int quantity;
+
+    printf("Masukkan nama produk yang ingin dipesan: ");
+    scanf("%s", productName);
+    printf("Masukkan jumlah yang ingin dipesan: ");
+    scanf("%d", &quantity);
+
+    processPurchase(store, productName, quantity);
 }
 
 int main() {
@@ -85,11 +98,9 @@ int main() {
     // Tampilkan daftar produk yang tersedia
     displayProducts(&myStore);
 
-    // Proses pembelian
-    printf("\nProses pembelian...\n");
-    processPurchase(&myStore, "Gula", 5);
-    processPurchase(&myStore, "Kopi", 20);
-    processPurchase(&myStore, "Sabun", 40);
+    // Memasukkan pesanan
+    printf("\nMasukkan pesanan Anda:\n");
+    placeOrder(&myStore);
 
     // Tampilkan daftar produk setelah pembelian
     printf("\nStok produk setelah pembelian:\n");
