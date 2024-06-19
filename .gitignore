@@ -1,4 +1,5 @@
-pert8/db/maridadb/*
+.gitignore
+pert8/db/mariadb/*
 pert8/db/postgres/*
 pert8/db/mongo/*
 pert8/db/redis/*
