@@ -150,3 +150,4 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 9000
 CMD ["php-fpm"]
+
